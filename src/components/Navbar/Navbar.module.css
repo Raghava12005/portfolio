@@ -1,0 +1,181 @@
+@import "../../vars.css";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-roboto), sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: left;
+  justify-content: center; /* Center items horizontally */
+  padding: 25px 10%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 40px; /* Increased font size */
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-text);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  margin: 0 auto; 
+  text-align:left;
+  flex:3 ;
+}
+
+.menuBtn {
+  display: none;
+  font-size: 40px; /* Increased font size */
+  color: var(--color-text);
+  background-color: var(--color-primary);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.menuBtn:hover {
+  background-color: var(--color-dark);
+}
+
+.menu {
+  display: flex;
+  gap: 30px;
+}
+
+.menuItems {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  align-items: center;
+}
+
+.menuItems a {
+  font-size: 30px; /* Increased font size */
+  color: var(--color-text);
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.menuItems a:hover {
+  color: var(--color-primary);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 830px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; /* Center items vertically on small screens */
+    padding: 50px;
+  }
+
+  .menu {
+    width: 100%;
+    justify-content: center; /* Center menu items horizontally */
+    align-items: center;
+  }
+
+  .menuBtn {
+    display: block;
+  }
+
+  .menuItems {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    background: rgba(25, 55, 109, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .menuItems a {
+    width: 100%;
+    text-align: center; /* Center text in menu items */
+    padding: 10px;
+  }
+
+  .menuOpen {
+    display: flex;
+  }
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-roboto);
+  color: var(--color-text);
+  margin: 0;
+  padding: 10px 0;
+}
+
+h1 {
+  font-size: 70px; /* Increased font size */
+  font-weight: 700;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(
+    90deg,
+    rgb(235, 201, 10) 70%,
+    rgba(238, 235, 235, 0.972) 120%
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: titleEntrance 2.5s ease-in-out;
+}
+
+h2 {
+  font-size: 60px; /* Increased font size */
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 50px; /* Increased font size */
+  font-weight: 600;
+}
+
+@keyframes titleEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(-50px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Example Usage */
+.heroSection {
+  padding: 100px 0;
+  text-align: center;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-secondary),
+    var(--color-dark)
+  );
+  background-size: 500% 400%;
+  animation: gradientBackground 10s ease infinite;
+  color: var(--color-text);
+}
+
+@keyframes gradientBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

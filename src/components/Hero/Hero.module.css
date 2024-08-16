@@ -1,0 +1,183 @@
+@import "../../vars.css";
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  margin-top: 49px;
+  z-index: 1;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.container img {
+  border-radius: 50%;
+  width: 690px;
+  height: 470px;
+  object-fit: cover;
+  display: block;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--color-text);
+  z-index: 1;
+}
+
+.title {
+  font-size: 50px;
+  font-weight: 700;
+  font-family: var(--font-roboto);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title span {
+  display: block;
+  opacity: 0;
+  font-size: 50px;
+  font-weight: 700;
+  font-family: var(--font-roboto);
+  background: linear-gradient(45deg, #ff8c00, #ffa500, #ffd700);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  margin-bottom: 10px; /* Space between words */
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.title span:hover {
+  color: #fff; /* Change text color on hover */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.title .word1 {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.title .word2 {
+  animation: fadeIn 1s ease-in-out 1s forwards;
+}
+
+.title .word3 {
+  animation: fadeIn 1s ease-in-out 2s forwards;
+}
+
+.title .word4 {
+  animation: fadeIn 1s ease-in-out 3s forwards;
+}
+
+.title .word5 {
+  animation: fadeIn 1s ease-in-out 4s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.description {
+  font-size: 25px;
+  font-family: var(--font-roboto);
+  margin-bottom: 52px;
+  animation: fadeInUp 2s ease-in-out 3s;
+}
+
+.contactBtn {
+  text-decoration: none;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  border-radius: 100px;
+  font-size: 30px;
+  font-weight: 600;
+  padding: 17px 26px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.heroImg {
+  width: 50%;
+  z-index: 1;
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 10px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes titleEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(-50px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.topBlur {
+  position: absolute;
+  width: 50vw;
+  height: 50vw;
+  min-width: 350px;
+  top: -128px;
+  left: -10vw;
+  border-radius: 764px;
+  background: rgba(25, 55, 109, 0.7);
+  filter: blur(100px);
+  z-index: 0;
+}
+
+.bottomBlur {
+  position: absolute;
+  width: 70vw;
+  height: 50vw;
+  min-width: 350px;
+  top: 246px;
+  right: -25vw;
+  border-radius: 764px;
+  background: rgba(25, 55, 109, 0.7);
+  filter: blur(100px);
+  z-index: 0;
+}
+
+@media screen and (max-width: 830px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+
+  .content {
+    align-items: center;
+  }
+}
